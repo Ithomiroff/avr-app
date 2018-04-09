@@ -1,0 +1,106 @@
+@import "variables";
+@import "mixin";
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #ffffff!important;
+
+  .title {
+    margin-bottom: 30px;
+    @include title(#fff);
+  }
+
+  &-info {
+    position: relative;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+      @media (max-width: 440px) {
+        align-self: flex-start;
+      }
+    }
+
+    .heading {
+      margin-bottom: 20px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    &__body {
+      text-align: center;
+      width: 100%;
+      @media (max-width: 664px) {
+        text-align: unset;
+      }
+      .row {
+        display: inline-block;
+        flex-direction: row;
+        justify-content: space-around;
+
+        margin-right: 30px;
+        text-align: left;
+        .mail_big, .phone_big {
+          margin-bottom: 20px;
+        }
+
+        .text {
+          &-small {
+            font-size: 20px;
+            font-weight: 600;
+          }
+          &-big {
+            font-size: 30px;
+            font-weight: 600;
+            @media (max-width: 440px) {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      span {
+        font-weight: 100;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 440px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .address {
+      &-header {
+        margin-bottom: 20px;
+      }
+      &-content {
+        display: flex;
+        flex-direction: row;
+
+        &__text {
+          font-weight: 100;
+        }
+        &__marker {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+#map {
+  width: 100%;
+  height: 50vh;
+  margin: 0 auto;
+}

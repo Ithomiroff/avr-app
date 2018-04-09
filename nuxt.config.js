@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   /*
   ** Headers of the page
@@ -33,6 +35,25 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+  },
+  plugins: [
+    { src: '~plugins/vue-carousel', ssr: false },
+    { src: '~plugins/vue-google-maps', ssr: false }
+  ],
+  modules: [
+    // Simple usage
+    'nuxt-google-maps-module',
+
+    // With options
+    ['nuxt-google-maps-module', {
+      /* module options */
+      key: 'AIzaSyCcPm03edC-q1rh_3Fdzb1QRFjQPwHcGs0',
+    }],
+  ],
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
     }
   }
 }
